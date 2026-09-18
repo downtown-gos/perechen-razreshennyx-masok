@@ -1,0 +1,2310 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="./логотип1.png">
+<title>DOWNTOWN | Перечень разрешенных масок</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap');
+
+:root {
+    --ink:#f4efe3;
+    --muted:#a8a093;
+    --soft:#d8cfbb;
+    --bg:#10120f;
+    --bg-2:#171a15;
+    --panel:#20231d;
+    --panel-2:#2a2c24;
+    --line:rgba(244,239,227,.14);
+    --line-strong:rgba(244,239,227,.28);
+    --accent:#b8a85d;
+    --accent-2:#786f3e;
+    --shadow:rgba(2,4,2,.42);
+    --radius-xl:34px;
+    --radius-lg:24px;
+    --radius-md:16px;
+    --page-edge:clamp(18px,4.5vw,72px);
+    --card-width:clamp(320px,26vw,400px);
+    --card-image-height:clamp(280px,20vw,360px);
+    --card-title-height:clamp(92px,5.8vw,112px);
+    --card-meta-height:58px;
+    --catalog-gap:clamp(18px,2vw,34px);
+    --ease:cubic-bezier(.22,1,.36,1);
+    color-scheme:dark;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing:border-box;
+    cursor:url('./курсор.svg') 2 2, auto !important;
+}
+
+html {
+    scroll-behavior:smooth;
+}
+
+body {
+    margin:0;
+    min-height:100vh;
+    overflow-x:hidden;
+    color:var(--ink);
+    background:
+        radial-gradient(circle at 12% 8%,rgba(184,168,93,.18),transparent 32rem),
+        radial-gradient(circle at 88% 14%,rgba(120,111,62,.16),transparent 28rem),
+        linear-gradient(135deg,#0f110f 0%,#151811 42%,#0f1110 100%);
+    font-family:'Manrope','Segoe UI',system-ui,sans-serif;
+    font-variant-numeric:tabular-nums;
+}
+
+body::before {
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:60;
+    pointer-events:none;
+    opacity:.08;
+    background-image:
+        linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+    background-size:72px 72px;
+    mask-image:linear-gradient(to bottom,black,transparent 88%);
+}
+
+body::after {
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:61;
+    pointer-events:none;
+    opacity:.13;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E");
+    mix-blend-mode:soft-light;
+}
+
+button,
+a {
+    font:inherit;
+}
+
+button {
+    color:inherit;
+    cursor:pointer;
+}
+
+img {
+    max-width:100%;
+}
+
+body.modal-open {
+    overflow:hidden;
+}
+
+.site-header {
+    position:relative;
+    z-index:5;
+    padding:18px var(--page-edge) 0;
+}
+
+.header-shell {
+    position:relative;
+    display:grid;
+    grid-template-columns:138px minmax(0,1fr) 138px;
+    gap:clamp(12px,2vw,28px);
+    align-items:center;
+    min-height:124px;
+    max-width:1480px;
+    margin:0 auto;
+    padding:16px clamp(16px,2.5vw,28px);
+    background:
+        linear-gradient(135deg,rgba(255,255,255,.075),rgba(255,255,255,.025)),
+        radial-gradient(circle at 80% 20%,rgba(184,168,93,.2),transparent 24rem),
+        rgba(20,22,18,.78);
+    border:1px solid var(--line);
+    border-radius:var(--radius-xl);
+    box-shadow:0 34px 90px -48px var(--shadow),inset 0 1px 0 rgba(255,255,255,.1);
+}
+
+.brand-mark,
+.header-copy,
+.header-art {
+    position:relative;
+    z-index:1;
+}
+
+.brand-mark {
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    gap:10px;
+}
+
+.site-logo {
+    width:118px;
+    height:118px;
+    object-fit:contain;
+    padding:0;
+    background:transparent;
+    border:0;
+    border-radius:0;
+    box-shadow:none;
+    cursor:default;
+    transition:transform .55s var(--ease);
+}
+
+.site-logo:hover,
+.site-logo:focus-visible {
+    outline:none;
+}
+
+.header-copy {
+    justify-self:center;
+    align-self:center;
+    max-width:760px;
+    padding:0;
+    text-align:center;
+}
+
+header h1 {
+    margin:0;
+    max-width:100%;
+    color:var(--ink);
+    font-size:clamp(24px,3.2vw,44px);
+    font-weight:700;
+    line-height:1.04;
+    letter-spacing:-.035em;
+    text-wrap:balance;
+}
+
+.header-art {
+    justify-self:end;
+    align-self:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:124px;
+    height:124px;
+    overflow:hidden;
+    background:transparent;
+    border:0;
+    border-radius:0;
+}
+
+.header-side-image {
+    width:116px;
+    height:auto;
+    object-fit:contain;
+    filter:drop-shadow(0 18px 20px rgba(0,0,0,.3));
+    transform:none;
+}
+
+.catalog-tools {
+    position:sticky;
+    top:16px;
+    z-index:6;
+    display:grid;
+    grid-template-columns:minmax(0,1fr);
+    align-items:center;
+    max-width:1480px;
+    margin:18px auto 0;
+    padding:0 var(--page-edge);
+}
+
+.search-field {
+    display:grid;
+    grid-template-columns:22px minmax(0,1fr) auto 34px;
+    gap:12px;
+    align-items:center;
+    min-width:0;
+    padding:10px 14px;
+    background:rgba(16,18,15,.74);
+    border:1px solid var(--line);
+    border-radius:999px;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 18px 52px -42px rgba(0,0,0,.7);
+    backdrop-filter:blur(18px);
+}
+
+.search-count,
+.search-clear {
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+}
+
+.search-icon {
+    display:block;
+    width:22px;
+    height:22px;
+    background:url('./поиск.svg') center / 20px 20px no-repeat;
+}
+
+.catalog-search {
+    width:100%;
+    min-width:0;
+    padding:8px 0;
+    color:var(--ink);
+    background:transparent;
+    border:0;
+    outline:0;
+    font:inherit;
+}
+
+.catalog-search::placeholder {
+    color:rgba(244,239,227,.42);
+}
+
+.catalog-search::-webkit-search-cancel-button {
+    display:none;
+    -webkit-appearance:none;
+}
+
+.search-field:focus-within {
+    border-color:rgba(184,168,93,.52);
+    background:rgba(18,20,16,.9);
+}
+
+.search-count,
+.search-clear {
+    color:var(--accent);
+}
+
+.search-count {
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    min-height:34px;
+    padding-inline:8px 0;
+    white-space:nowrap;
+}
+
+.search-clear {
+    width:34px;
+    height:34px;
+    min-height:0;
+    padding:0;
+    background:transparent url('./крестик.svg') center / 16px 16px no-repeat;
+    border:0;
+    border-radius:999px;
+    transition:transform .32s var(--ease),background-color .32s var(--ease);
+}
+
+.search-count[hidden],
+.search-clear[hidden] {
+    display:none;
+}
+
+.search-clear:hover,
+.search-clear:focus-visible {
+    background:rgba(184,168,93,.13);
+    background-image:url('./крестик.svg');
+    background-position:center;
+    background-size:16px 16px;
+    background-repeat:no-repeat;
+    outline:none;
+    transform:translateY(-2px);
+}
+
+.search-clear:active {
+    transform:scale(.96);
+}
+
+.catalog {
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(min(100%,var(--card-width)),1fr));
+    gap:var(--catalog-gap);
+    align-items:stretch;
+    max-width:1480px;
+    margin:0 auto;
+    padding:clamp(26px,4vw,64px) var(--page-edge) clamp(56px,6vw,96px);
+}
+
+.section {
+    position:relative;
+    display:grid;
+    grid-template-rows:var(--card-title-height) calc(var(--card-image-height) + var(--card-meta-height));
+    min-width:0;
+    height:100%;
+    overflow:hidden;
+    background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.022));
+    border:1px solid var(--line);
+    border-radius:var(--radius-lg);
+    box-shadow:0 28px 74px -52px var(--shadow),inset 0 1px 0 rgba(255,255,255,.08);
+    animation:sectionIn .75s var(--ease) both;
+    animation-delay:calc(min(var(--section-index,0), 9) * 55ms);
+    transition:transform .55s var(--ease),border-color .55s var(--ease),background .55s var(--ease);
+}
+
+.section.is-hidden {
+    display:none;
+}
+
+.empty-state {
+    grid-column:1 / -1;
+    padding:clamp(42px,8vw,96px);
+    text-align:center;
+    background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
+    border:1px solid var(--line);
+    border-radius:var(--radius-xl);
+}
+
+.empty-state span {
+    display:block;
+    margin-bottom:12px;
+    color:var(--accent);
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+}
+
+.empty-state strong {
+    display:block;
+    color:var(--ink);
+    font-size:clamp(26px,5vw,64px);
+    font-weight:700;
+    line-height:.96;
+    letter-spacing:-.05em;
+}
+
+.section:hover {
+    border-color:rgba(184,168,93,.38);
+    background:linear-gradient(145deg,rgba(184,168,93,.11),rgba(255,255,255,.028));
+    transform:translateY(-6px);
+}
+
+h2 {
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    height:var(--card-title-height);
+    margin:0;
+    padding:20px 62px 18px 20px;
+    color:var(--ink);
+    background:
+        radial-gradient(circle at 18% 0%,rgba(184,168,93,.16),transparent 16rem),
+        rgba(255,255,255,.035);
+    border-bottom:1px solid var(--line);
+    font-size:clamp(21px,1.7vw,31px);
+    font-weight:650;
+    line-height:1.04;
+    letter-spacing:-.035em;
+    text-align:center;
+    text-wrap:balance;
+}
+
+.section-title-text {
+    display:-webkit-box;
+    max-width:100%;
+    overflow:hidden;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:3;
+}
+
+.title-copy {
+    position:absolute;
+    right:18px;
+    top:50%;
+    width:34px;
+    height:34px;
+    padding:0;
+    background:rgba(255,255,255,.06) url('./copy.svg') center / 17px 17px no-repeat;
+    border:1px solid var(--line);
+    border-radius:999px;
+    transform:translateY(-50%);
+    transition:transform .45s var(--ease),background-color .45s var(--ease),border-color .45s var(--ease);
+}
+
+.title-copy:hover,
+.title-copy:focus-visible {
+    background-color:rgba(184,168,93,.16);
+    border-color:rgba(184,168,93,.45);
+    outline:none;
+    transform:translateY(calc(-50% - 2px)) rotate(-4deg);
+}
+
+.title-copy.copied {
+    transform:translateY(-50%) scale(.88);
+}
+
+.grid {
+    display:grid;
+    grid-template-columns:1fr;
+    min-height:calc(var(--card-image-height) + var(--card-meta-height));
+    height:calc(var(--card-image-height) + var(--card-meta-height));
+}
+
+.grid.carousel {
+    position:relative;
+    overflow:hidden;
+}
+
+.card {
+    position:relative;
+    display:grid;
+    grid-template-rows:var(--card-image-height) var(--card-meta-height);
+    min-width:0;
+    height:calc(var(--card-image-height) + var(--card-meta-height));
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 50% 38%,rgba(184,168,93,.22),transparent 13rem),
+        linear-gradient(180deg,rgba(255,255,255,.055) 0 var(--card-image-height),rgba(255,255,255,.025) var(--card-image-height));
+}
+
+.grid.carousel .card {
+    display:grid;
+    grid-column:1;
+    grid-row:1;
+    opacity:0;
+    pointer-events:none;
+    transform:translateX(var(--carousel-enter-x,36px)) scale(.985);
+    transition:opacity .38s var(--ease),transform .38s var(--ease);
+    will-change:opacity,transform;
+}
+
+.grid.carousel .card.is-active {
+    z-index:2;
+    opacity:1;
+    pointer-events:auto;
+    transform:translateX(0) scale(1);
+}
+
+.grid.carousel .card.is-leaving {
+    z-index:1;
+    opacity:0;
+    pointer-events:none;
+    transform:translateX(var(--carousel-leave-x,-36px)) scale(.985);
+}
+
+.grid.carousel .card.is-entering {
+    animation:variantCardIn .38s var(--ease);
+}
+
+.card::before {
+    content:"";
+    position:absolute;
+    inset:16px 16px auto;
+    height:calc(var(--card-image-height) - 32px);
+    z-index:1;
+    border:1px solid rgba(244,239,227,.09);
+    border-radius:calc(var(--radius-lg) - 8px);
+    pointer-events:none;
+}
+
+.card::after {
+    content:"";
+    position:absolute;
+    top:calc(var(--card-image-height) * .5);
+    left:50%;
+    z-index:4;
+    width:54px;
+    height:54px;
+    background:rgba(10,11,9,.72) url('./лупа.svg') center / 23px 23px no-repeat;
+    border:1px solid rgba(244,239,227,.18);
+    border-radius:999px;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 18px 42px -24px rgba(0,0,0,.8);
+    opacity:0;
+    pointer-events:none;
+    transform:translate(-50%,-50%) scale(.82);
+    transition:opacity .32s var(--ease),transform .32s var(--ease);
+}
+
+.card:hover::after {
+    opacity:1;
+    transform:translate(-50%,-50%) scale(1);
+}
+
+.card img {
+    position:relative;
+    grid-row:1;
+    z-index:2;
+    display:block;
+    align-self:center;
+    justify-self:center;
+    width:calc(100% - 36px);
+    height:calc(var(--card-image-height) - 36px);
+    max-width:none;
+    max-height:none;
+    padding:0;
+    object-fit:contain;
+    object-position:center center;
+    background:transparent;
+    filter:drop-shadow(0 34px 28px rgba(0,0,0,.26));
+    transition:transform .7s var(--ease),filter .7s var(--ease);
+}
+
+.card:hover img {
+    filter:drop-shadow(0 42px 34px rgba(0,0,0,.34));
+    transform:translateY(-3px) scale(1.01);
+}
+
+.variant {
+    position:relative;
+    grid-row:2;
+    z-index:3;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    height:var(--card-meta-height);
+    padding:14px 18px;
+    color:var(--soft);
+    font-family:'JetBrains Mono',monospace;
+    font-size:15px;
+    font-weight:600;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    border-top:1px solid var(--line);
+}
+
+.carousel-btn {
+    position:absolute;
+    top:0;
+    z-index:5;
+    width:clamp(50px,4vw,68px);
+    height:var(--card-image-height);
+    padding:0;
+    background:linear-gradient(90deg,rgba(16,18,15,.54),transparent);
+    border:0;
+    opacity:.76;
+    transition:opacity .3s var(--ease),transform .3s var(--ease);
+}
+
+.carousel-btn--next {
+    right:0;
+    background:linear-gradient(270deg,rgba(16,18,15,.54),transparent);
+}
+
+.carousel-btn--prev {
+    left:0;
+}
+
+.carousel-btn:focus-visible {
+    outline:2px solid var(--accent);
+    outline-offset:-8px;
+}
+
+.carousel-btn:disabled {
+    display:none;
+}
+
+.carousel-btn:hover {
+    opacity:1;
+}
+
+.carousel-btn:active {
+    transform:scale(.97);
+}
+
+.carousel-btn::before {
+    content:"";
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:34px;
+    height:34px;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:contain;
+    transform:translate(-50%,-50%);
+    transition:transform .35s var(--ease);
+}
+
+.carousel-btn:hover::before {
+    transform:translate(-50%,-50%) scale(1.08);
+}
+
+.carousel-btn--prev::before {
+    background-image:url('./стрелкалево.svg');
+}
+
+.carousel-btn--next::before {
+    background-image:url('./стрелкавправо.svg');
+}
+
+.viewer {
+    position:fixed;
+    inset:0;
+    z-index:50;
+    display:none;
+    color:var(--ink);
+    --viewer-control-height:48px;
+    --viewer-arrow-size:38px;
+}
+
+.viewer.is-open {
+    display:block;
+}
+
+.viewer__backdrop {
+    position:absolute;
+    inset:0;
+    background:rgba(12,13,11,.82);
+    backdrop-filter:blur(22px);
+}
+
+.viewer__content {
+    position:relative;
+    z-index:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:18px;
+    width:min(1180px,100%);
+    min-height:100dvh;
+    margin:0 auto;
+    padding:78px 112px 44px;
+}
+
+.viewer__controls {
+    display:flex;
+    align-items:stretch;
+    justify-content:center;
+    gap:18px;
+    width:100%;
+    min-width:0;
+}
+
+.viewer__controls.is-hidden {
+    display:none;
+}
+
+.viewer__caption {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:fit-content;
+    min-width:0;
+    max-width:min(760px,calc(100% - 104px));
+    min-height:var(--viewer-control-height);
+    padding:0 4px;
+    color:var(--ink);
+    text-align:center;
+    font-size:clamp(18px,2vw,28px);
+    font-weight:650;
+    line-height:1.12;
+    letter-spacing:-.035em;
+    overflow-wrap:anywhere;
+    text-wrap:balance;
+}
+
+.viewer__caption--variant {
+    color:var(--ink);
+    font-family:'JetBrains Mono',monospace;
+    font-size:13px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+}
+
+.viewer__image-wrap {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    min-height:0;
+    padding:clamp(14px,2vw,24px);
+    background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.025));
+    border:1px solid var(--line);
+    border-radius:var(--radius-xl);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 38px 96px -52px rgba(0,0,0,.75);
+}
+
+.viewer__image {
+    display:block;
+    max-width:100%;
+    max-height:calc(100vh - 236px);
+    object-fit:contain;
+    filter:drop-shadow(0 40px 34px rgba(0,0,0,.36));
+}
+
+.viewer__inline-nav,
+.viewer__close {
+    position:relative;
+    flex:0 0 auto;
+    width:var(--viewer-arrow-size);
+    min-height:var(--viewer-control-height);
+    padding:0;
+    background:rgba(255,255,255,.055);
+    border:1px solid var(--line);
+    border-radius:999px;
+    transition:transform .35s var(--ease),border-color .35s var(--ease),background .35s var(--ease);
+}
+
+.viewer__inline-nav::before {
+    content:"";
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:28px;
+    height:28px;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:contain;
+    transform:translate(-50%,-50%);
+}
+
+.viewer__inline-nav--prev::before {
+    background-image:url('./стрелкалево.svg');
+}
+
+.viewer__inline-nav--next::before {
+    background-image:url('./стрелкавправо.svg');
+}
+
+.viewer__inline-nav:hover,
+.viewer__close:hover {
+    border-color:rgba(184,168,93,.45);
+    background-color:rgba(184,168,93,.13);
+    transform:translateY(-2px);
+}
+
+.viewer__inline-nav:active,
+.viewer__close:active {
+    transform:scale(.96);
+}
+
+.viewer__inline-nav:disabled {
+    display:none;
+}
+
+.viewer__image.is-switching {
+    animation:viewerImageIn .28s var(--ease);
+}
+
+.viewer__close {
+    position:absolute;
+    top:24px;
+    right:24px;
+    z-index:2;
+    width:48px;
+    height:48px;
+    min-height:0;
+    background:rgba(255,255,255,.055) url('./крестик.svg') center / 20px 20px no-repeat;
+}
+
+.viewer__inline-nav:focus-visible,
+.viewer__close:focus-visible {
+    outline:2px solid var(--accent);
+    outline-offset:4px;
+}
+
+@keyframes sectionIn {
+    from {
+        opacity:0;
+        transform:translateY(30px) scale(.985);
+    }
+    to {
+        opacity:1;
+        transform:translateY(var(--section-rest-y,0)) scale(1);
+    }
+}
+
+@keyframes viewerImageIn {
+    from {
+        opacity:.25;
+        transform:translateY(8px) scale(.985);
+    }
+    to {
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+@keyframes variantCardIn {
+    from {
+        opacity:.18;
+        transform:translateX(var(--carousel-enter-x,36px)) scale(.985);
+    }
+    to {
+        opacity:1;
+        transform:translateX(0) scale(1);
+    }
+}
+
+@media (prefers-reduced-motion:reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration:.001ms !important;
+        animation-iteration-count:1 !important;
+        scroll-behavior:auto !important;
+        transition-duration:.001ms !important;
+    }
+}
+
+@media (max-width:1180px) {
+    :root {
+        --card-width:clamp(300px,36vw,370px);
+        --card-image-height:clamp(260px,30vw,340px);
+        --card-title-height:clamp(88px,8vw,106px);
+    }
+}
+
+@media (max-width:820px) {
+    :root {
+        --page-edge:18px;
+        --card-width:100%;
+        --card-image-height:clamp(260px,70vw,340px);
+        --card-title-height:clamp(82px,21vw,104px);
+    }
+
+    .site-header {
+        padding-top:18px;
+    }
+
+    .header-shell {
+        grid-template-columns:86px minmax(0,1fr) 86px;
+        min-height:94px;
+        padding:12px 14px;
+        border-radius:22px;
+    }
+
+    .brand-mark {
+        flex-direction:row;
+        align-items:center;
+        justify-content:space-between;
+    }
+
+    .site-logo {
+        width:82px;
+        height:82px;
+    }
+
+    header h1 {
+        font-size:clamp(19px,5.4vw,27px);
+        letter-spacing:-.03em;
+    }
+
+    .header-copy {
+        padding:0;
+    }
+
+    .header-art {
+        width:82px;
+        height:82px;
+    }
+
+    .header-side-image {
+        width:80px;
+    }
+
+    .catalog {
+        padding-top:24px;
+    }
+
+    .catalog-tools {
+        position:relative;
+        top:auto;
+        grid-template-columns:1fr;
+        margin-top:14px;
+    }
+
+    .search-field {
+        grid-column:1 / -1;
+    }
+
+    .section:hover {
+        transform:translateY(-4px);
+    }
+
+    h2 {
+        height:var(--card-title-height);
+        padding:18px 60px 17px 18px;
+        font-size:clamp(22px,6vw,30px);
+    }
+
+    .viewer__content {
+        padding:84px 18px 30px;
+        gap:14px;
+    }
+
+    .viewer__image {
+        max-height:calc(100vh - 250px);
+    }
+
+    .viewer__caption {
+        max-width:calc(100% - 88px);
+    }
+
+    .viewer__close {
+        top:18px;
+        right:18px;
+    }
+}
+
+@media (max-width:460px) {
+    .header-shell {
+        grid-template-columns:66px minmax(0,1fr) 66px;
+        min-height:78px;
+        padding:10px;
+    }
+
+    .site-logo {
+        width:64px;
+        height:64px;
+    }
+
+    .header-art {
+        width:62px;
+        height:62px;
+    }
+
+    .header-side-image {
+        width:60px;
+    }
+
+    header h1 {
+        font-size:clamp(17px,5.1vw,22px);
+    }
+
+    .catalog-tools {
+        grid-template-columns:1fr;
+        gap:10px;
+    }
+
+    .variant {
+        padding-inline:14px;
+    }
+
+    .viewer {
+        --viewer-control-height:42px;
+        --viewer-arrow-size:34px;
+    }
+
+    .viewer__controls {
+        gap:10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="site-header">
+    <div class="header-shell">
+        <div class="brand-mark">
+            <img class="site-logo" src="логотип1.png" alt="Логотип Matadora">
+        </div>
+        <div class="header-copy">
+            <h1>Перечень разрешенных масок</h1>
+        </div>
+        <div class="header-art" aria-hidden="true">
+            <img class="header-side-image" src="логотип2.png" alt="">
+        </div>
+    </div>
+</header>
+
+<section class="catalog-tools" aria-label="Панель каталога">
+    <label class="search-field">
+        <span class="search-icon" aria-hidden="true"></span>
+        <input class="catalog-search" type="search" placeholder="Название" autocomplete="off" aria-label="Поиск по каталогу">
+        <output class="search-count" aria-live="polite" hidden>27/27</output>
+        <button class="search-clear" type="button" aria-label="Очистить поиск" hidden></button>
+    </label>
+</section>
+
+<main class="catalog" id="catalog">
+
+    <section class="empty-state" hidden>
+        <span>нет совпадений</span>
+        <strong>Попробуйте другое название</strong>
+    </section>
+
+    <section class="section">
+        <h2>Бандана обычная</h2>
+        <div class="grid">
+            
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_51_0.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 1</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_51_1.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 2</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_51_2.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 3</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_51_3.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 4</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_51_4.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 5</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_51_7.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 8</div>
+        </div>
+        
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2>Маска с капюшоном</h2>
+        <div class="grid">
+            
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_53_0.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 1</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_53_1.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 2</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_53_2.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 3</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_53_3.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 4</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_53_4.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 5</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_53_5.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 6</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_53_6.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 7</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_53_7.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 8</div>
+        </div>
+        
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2>Balenciara Reverse</h2>
+        <div class="grid">
+            
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_333_0.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 1</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_333_5.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 6</div>
+        </div>
+        
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2>Маска тканевая</h2>
+        <div class="grid">
+            
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_54_0.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 1</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_54_1.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 2</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_54_2.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 3</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_54_5.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 6</div>
+        </div>
+        
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2>Oni</h2>
+        <div class="grid">
+            
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_211_0.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 1</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_211_1.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 2</div>
+        </div>
+        
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2>Маска обычная</h2>
+        <div class="grid">
+            
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_57_0.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 1</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_57_1.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 2</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_57_3.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 4</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_57_4.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 5</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_57_6.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 7</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_57_7.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 8</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_57_16.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 17</div>
+        </div>
+        
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2>Тканевая  с узорами</h2>
+        <div class="grid">
+            
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_118_0.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 1</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_118_1.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 2</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_118_7.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 8</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_118_8.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 9</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_118_10.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 11</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_118_11.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 12</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_118_13.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 14</div>
+        </div>
+        
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2>Маска Ведущего</h2>
+        <div class="grid">
+            
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_214_0.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант</div>
+        </div>
+        
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2>Маска модника №1</h2>
+        <div class="grid">
+
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_133_4.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 5</div>
+        </div>
+            
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_133_5.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 6</div>
+        </div>
+            
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_133_7.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 8</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_133_10.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 11</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_133_11.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 12</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_133_15.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 16</div>
+        </div>
+        
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2>Облегающий шарф</h2>
+        <div class="grid">
+            
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_116_0.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 1</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_116_1.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 2</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_116_2.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 3</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_116_4.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 5</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_116_5.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 6</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_116_8.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 9</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_116_9.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 10</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_116_10.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 11</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_116_13.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 14</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_116_15.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 16</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_116_18.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 19</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_116_19.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 20</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_116_20.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 21</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_116_22.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 23</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_116_23.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 24</div>
+        </div>
+        
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2>Маска с узорами</h2>
+        <div class="grid">
+            
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_113_5.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 6</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_113_11.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 12</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_113_21.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 22</div>
+        </div>
+        
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Oni Metal</h2>
+        <div class="grid">
+            
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_212_0.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 1</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_212_1.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 2</div>
+        </div>
+        
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2>Маска антагониста</h2>
+        <div class="grid">
+            
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_174_0.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 1</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_174_1.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 2</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_174_2.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 3</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_174_6.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 7</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_174_10.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 11</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_174_11.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 12</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_174_21.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 22</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_174_22.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 23</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_174_23.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 24</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_174_24.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 25</div>
+        </div>
+        
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2>Балаклава</h2>
+        <div class="grid">
+            
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_186_0.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 1</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_186_1.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 2</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_186_2.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 3</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_186_5.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 6</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_186_11.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 12</div>
+        </div>
+        
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2>Намордник</h2>
+        <div class="grid">
+            
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_101_1.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 2</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_101_4.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 5</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_101_5.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 6</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_101_6.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 7</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_101_7.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 8</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_101_8.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 9</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_101_9.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 10</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_101_13.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 14</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_101_15.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 16</div>
+        </div>
+        
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2>Балаклава брендовая</h2>
+        <div class="grid">
+            
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_258_0.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 1</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_258_1.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 2</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_258_3.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 4</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_258_6.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 7</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_258_21.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 22</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_258_22.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 23</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_258_24.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 25</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_258_25.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 26</div>
+        </div>
+        
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2>Балаклава Камо</h2>
+        <div class="grid">
+            
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_259_1.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 2</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_259_2.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 3</div>
+        </div>
+        
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2>Маска с козырьком Vr Tetryx</h2>
+        <div class="grid">
+            
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_337_0.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 1</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_337_1.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 2</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_337_2.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 3</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_337_3.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 4</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_337_4.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 5</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_337_5.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 6</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_337_9.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 10</div>
+        </div>
+        
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2>Шарф</h2>
+        <div class="grid">
+            
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_115_0.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 1</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_115_1.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 2</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_115_2.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 3</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_115_4.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 5</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_115_5.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 6</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_115_8.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 9</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_115_9.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 10</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_115_10.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 11</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_115_12.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 13</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_115_13.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 14</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_115_14.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 15</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_115_15.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 16</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_115_18.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 19</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_115_19.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 20</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_115_20.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 21</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_115_22.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 23</div>
+        </div>
+        
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2>Намордник с фильтром</h2>
+        <div class="grid">
+            
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_90_2.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 3</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_90_6.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 7</div>
+        </div>
+        
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2>Шарф гавайский</h2>
+        <div class="grid">
+            
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_188_1.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 2</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_188_3.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 4</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_188_11.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 12</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_188_12.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 13</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_188_14.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 15</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_188_16.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 17</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_188_17.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 18</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_188_20.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 21</div>
+        </div>
+        
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2>Маска с капюшоном Y8</h2>
+        <div class="grid">
+            
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_336_0.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 1</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_336_1.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 2</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_336_2.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 3</div>
+        </div>
+        
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2>Каллиграфия</h2>
+        <div class="grid">
+
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_215_1.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 2</div>
+        </div>
+            
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_215_2.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 3</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_215_8.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 9</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_215_9.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 10</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_215_10.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 11</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_215_13.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 14</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_215_14.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 15</div>
+        </div>
+        
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2>Намордник Bigness</h2>
+        <div class="grid">
+            
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_187_3.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 4</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_187_5.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 6</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_187_7.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 8</div>
+        </div>
+        
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2>Бандана с узорами</h2>
+        <div class="grid">
+            
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_111_4.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 5</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_111_8.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 9</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_111_10.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 11</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_111_11.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 12</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_111_15.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 16</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_111_22.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 23</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_111_23.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 24</div>
+        </div>
+        
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2>Балаклава Nice Pro</h2>
+        <div class="grid">
+            
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_338_0.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 1</div>
+        </div>
+        
+        <div class="card">
+            <img src="https://wiki.gta5rp.com/_next/image?url=https%3A%2F%2Ffiles.gta5rp.com%2FClothes512%2Fm_1_338_9.png&w=640&q=75" loading="lazy">
+            <div class="variant">Вариант 10</div>
+        </div>
+        
+        </div>
+    </section>
+    
+
+</main>
+
+<script>
+(() => {
+    const body = document.body;
+    const $ = (selector, root = document) => root.querySelector(selector);
+    const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
+    const states = [];
+    const searchInput = $(".catalog-search");
+    const searchCount = $(".search-count");
+    const searchClear = $(".search-clear");
+    const emptyState = $(".empty-state");
+
+    function createButton(className, label) {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = className;
+        button.setAttribute("aria-label", label);
+        return button;
+    }
+
+    const viewer = document.createElement("div");
+    viewer.className = "viewer";
+    viewer.setAttribute("aria-hidden", "true");
+    viewer.innerHTML =
+        '<div class="viewer__backdrop"></div>' +
+        '<div class="viewer__content" role="dialog" aria-modal="true">' +
+        '<button class="viewer__close" type="button"></button>' +
+        '<div class="viewer__controls viewer__controls--top">' +
+        '<button class="viewer__inline-nav viewer__inline-nav--prev viewer__section-prev" type="button"></button>' +
+        '<div class="viewer__caption viewer__caption--title"></div>' +
+        '<button class="viewer__inline-nav viewer__inline-nav--next viewer__section-next" type="button"></button>' +
+        '</div>' +
+        '<div class="viewer__image-wrap"><img class="viewer__image" alt=""></div>' +
+        '<div class="viewer__controls viewer__controls--bottom">' +
+        '<button class="viewer__inline-nav viewer__inline-nav--prev viewer__variant-prev" type="button"></button>' +
+        '<div class="viewer__caption viewer__caption--variant"></div>' +
+        '<button class="viewer__inline-nav viewer__inline-nav--next viewer__variant-next" type="button"></button>' +
+        '</div>' +
+        '</div>';
+    body.appendChild(viewer);
+
+    const viewerImage = $(".viewer__image", viewer);
+    const viewerTitleCaption = $(".viewer__caption--title", viewer);
+    const viewerVariantCaption = $(".viewer__caption--variant", viewer);
+    const viewerBackdrop = $(".viewer__backdrop", viewer);
+    const viewerClose = $(".viewer__close", viewer);
+    const viewerSectionPrevious = $(".viewer__section-prev", viewer);
+    const viewerSectionNext = $(".viewer__section-next", viewer);
+    const viewerVariantControls = $(".viewer__controls--bottom", viewer);
+    const viewerVariantPrevious = $(".viewer__variant-prev", viewer);
+    const viewerVariantNext = $(".viewer__variant-next", viewer);
+    let activeState = null;
+
+    [
+        [viewerClose, "\u0417\u0430\u043a\u0440\u044b\u0442\u044c"],
+        [viewerSectionPrevious, "\u041f\u0440\u0435\u0434\u044b\u0434\u0443\u0449\u0430\u044f \u043a\u0430\u0440\u0442\u043e\u0447\u043a\u0430"],
+        [viewerSectionNext, "\u0421\u043b\u0435\u0434\u0443\u044e\u0449\u0430\u044f \u043a\u0430\u0440\u0442\u043e\u0447\u043a\u0430"],
+        [viewerVariantPrevious, "\u041f\u0440\u0435\u0434\u044b\u0434\u0443\u0449\u0438\u0439 \u0432\u0430\u0440\u0438\u0430\u043d\u0442"],
+        [viewerVariantNext, "\u0421\u043b\u0435\u0434\u0443\u044e\u0449\u0438\u0439 \u0432\u0430\u0440\u0438\u0430\u043d\u0442"]
+    ].forEach(function(item) {
+        item[0].setAttribute("aria-label", item[1]);
+    });
+
+    function copyText(text, button) {
+        function done() {
+            button.classList.add("copied");
+            window.setTimeout(function() {
+                button.classList.remove("copied");
+            }, 220);
+        }
+
+        function fallbackCopy() {
+            const textarea = document.createElement("textarea");
+            textarea.value = text;
+            textarea.setAttribute("readonly", "");
+            textarea.style.position = "fixed";
+            textarea.style.left = "-9999px";
+            body.appendChild(textarea);
+            textarea.select();
+            document.execCommand("copy");
+            body.removeChild(textarea);
+            done();
+        }
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(done).catch(fallbackCopy);
+            return;
+        }
+
+        fallbackCopy();
+    }
+
+    function getVariantText(state) {
+        const variant = $(".variant", state.cards[state.activeCardIndex]);
+        return variant ? variant.textContent.trim() : "";
+    }
+
+    function getImage(state) {
+        return $("img", state.cards[state.activeCardIndex]);
+    }
+
+    function renderViewer() {
+        if (!activeState) {
+            return;
+        }
+
+        const image = getImage(activeState);
+        const variantText = getVariantText(activeState);
+        const hasVariantOptions = activeState.cards.length > 1;
+        const imageText = hasVariantOptions && variantText ? activeState.title + " - " + variantText : activeState.title;
+
+        viewerTitleCaption.textContent = activeState.title;
+        viewerVariantCaption.textContent = hasVariantOptions ? variantText : "";
+        viewerImage.src = image ? image.src : "";
+        viewerImage.alt = imageText;
+        viewerSectionPrevious.disabled = states.length < 2;
+        viewerSectionNext.disabled = states.length < 2;
+        viewerVariantControls.classList.toggle("is-hidden", !hasVariantOptions);
+        viewerVariantPrevious.disabled = !hasVariantOptions;
+        viewerVariantNext.disabled = !hasVariantOptions;
+        viewerImage.classList.remove("is-switching");
+        viewerImage.offsetWidth;
+        viewerImage.classList.add("is-switching");
+    }
+
+    function openViewer(state) {
+        activeState = state;
+        renderViewer();
+        viewer.classList.add("is-open");
+        viewer.setAttribute("aria-hidden", "false");
+        body.classList.add("modal-open");
+    }
+
+    function closeViewer() {
+        viewer.classList.remove("is-open");
+        viewer.setAttribute("aria-hidden", "true");
+        body.classList.remove("modal-open");
+        activeState = null;
+    }
+
+    function moveViewerVariant(delta) {
+        if (!activeState || activeState.cards.length < 2) {
+            return;
+        }
+
+        activeState.updateCarousel(activeState.activeCardIndex + delta);
+        renderViewer();
+    }
+
+    function moveViewerSection(delta) {
+        if (!activeState || states.length < 2) {
+            return;
+        }
+
+        activeState = states[(activeState.stateIndex + delta + states.length) % states.length];
+        renderViewer();
+    }
+
+    $$(".section").forEach(function(section, index) {
+        section.style.setProperty("--section-index", index);
+
+        const heading = $("h2", section);
+        const content = $(".grid", section);
+
+        if (!heading || !content) {
+            return;
+        }
+
+        const title = heading.textContent.trim();
+        const titleText = document.createElement("span");
+        const copyButton = createButton("title-copy", "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u043d\u0430\u0437\u0432\u0430\u043d\u0438\u0435");
+
+        titleText.className = "section-title-text";
+        titleText.textContent = title;
+
+        heading.textContent = "";
+        heading.appendChild(titleText);
+        heading.appendChild(copyButton);
+
+        copyButton.addEventListener("click", function(event) {
+            event.stopPropagation();
+            copyText(title, copyButton);
+        });
+
+        const cards = $$(".card", content);
+        const searchText = [title].concat(cards.map(function(card) {
+            return card.textContent.trim();
+        })).join(" ").toLowerCase();
+        const previousButton = createButton("carousel-btn carousel-btn--prev", "\u041f\u0440\u0435\u0434\u044b\u0434\u0443\u0449\u0438\u0439 \u0432\u0430\u0440\u0438\u0430\u043d\u0442");
+        const nextButton = createButton("carousel-btn carousel-btn--next", "\u0421\u043b\u0435\u0434\u0443\u044e\u0449\u0438\u0439 \u0432\u0430\u0440\u0438\u0430\u043d\u0442");
+        const state = {
+            title,
+            section,
+            cards,
+            searchText,
+            stateIndex:states.length,
+            activeCardIndex:0,
+            updateCarousel:function(nextIndex) {
+                if (!cards.length) {
+                    return;
+                }
+
+                const previousIndex = state.activeCardIndex;
+                const normalizedIndex = (nextIndex + cards.length) % cards.length;
+                const direction = normalizedIndex === previousIndex ? 1 : (nextIndex > previousIndex ? 1 : -1);
+                const previousCard = cards[previousIndex];
+
+                content.style.setProperty("--carousel-direction", direction);
+                content.style.setProperty("--carousel-enter-x", (direction * 36) + "px");
+                content.style.setProperty("--carousel-leave-x", (direction * -36) + "px");
+                state.activeCardIndex = normalizedIndex;
+
+                cards.forEach(function(card, cardIndex) {
+                    card.classList.remove("is-entering", "is-leaving");
+                    card.classList.toggle("is-active", cardIndex === normalizedIndex);
+                });
+
+                if (normalizedIndex === previousIndex || !previousCard) {
+                    return;
+                }
+
+                previousCard.classList.add("is-leaving");
+                cards[normalizedIndex].classList.add("is-entering");
+
+                window.setTimeout(function() {
+                    previousCard.classList.remove("is-leaving");
+                    cards[normalizedIndex].classList.remove("is-entering");
+                }, 420);
+            }
+        };
+
+        states.push(state);
+
+        if (cards.length) {
+            content.classList.add("carousel");
+            content.insertBefore(previousButton, content.firstElementChild);
+            content.appendChild(nextButton);
+            previousButton.disabled = cards.length < 2;
+            nextButton.disabled = cards.length < 2;
+            state.updateCarousel(0);
+        }
+
+        cards.forEach(function(card) {
+            card.addEventListener("click", function() {
+                openViewer(state);
+            });
+        });
+
+        previousButton.addEventListener("click", function(event) {
+            event.stopPropagation();
+            state.updateCarousel(state.activeCardIndex - 1);
+        });
+
+        nextButton.addEventListener("click", function(event) {
+            event.stopPropagation();
+            state.updateCarousel(state.activeCardIndex + 1);
+        });
+
+        content.id = "carousel-content-" + (index + 1);
+    });
+
+    function applySearch() {
+        const query = searchInput ? searchInput.value.trim().toLowerCase() : "";
+        let visibleCount = 0;
+
+        states.forEach(function(state) {
+            const isVisible = !query || state.searchText.includes(query);
+            state.section.classList.toggle("is-hidden", !isVisible);
+            visibleCount += isVisible ? 1 : 0;
+        });
+
+        if (searchCount) {
+            searchCount.textContent = visibleCount + "/" + states.length;
+            searchCount.hidden = !query;
+        }
+
+        if (searchClear) {
+            searchClear.hidden = !query;
+        }
+
+        if (emptyState) {
+            emptyState.hidden = visibleCount > 0;
+        }
+    }
+
+    if (searchInput) {
+        searchInput.addEventListener("input", applySearch);
+    }
+
+    if (searchClear) {
+        searchClear.addEventListener("click", function() {
+            searchInput.value = "";
+            searchInput.focus();
+            applySearch();
+        });
+    }
+
+    applySearch();
+
+    viewerSectionPrevious.addEventListener("click", function() {
+        moveViewerSection(-1);
+    });
+
+    viewerSectionNext.addEventListener("click", function() {
+        moveViewerSection(1);
+    });
+
+    viewerVariantPrevious.addEventListener("click", function() {
+        moveViewerVariant(-1);
+    });
+
+    viewerVariantNext.addEventListener("click", function() {
+        moveViewerVariant(1);
+    });
+
+    viewerClose.addEventListener("click", closeViewer);
+    viewerBackdrop.addEventListener("click", closeViewer);
+
+    document.addEventListener("keydown", function(event) {
+        if (!viewer.classList.contains("is-open")) {
+            return;
+        }
+
+        switch (event.key) {
+            case "Escape":
+                closeViewer();
+                break;
+            case "ArrowLeft":
+                moveViewerVariant(-1);
+                break;
+            case "ArrowRight":
+                moveViewerVariant(1);
+                break;
+            case "ArrowUp":
+                moveViewerSection(-1);
+                break;
+            case "ArrowDown":
+                moveViewerSection(1);
+                break;
+        }
+    });
+})();
+</script>
+
+</body>
+</html>
+
